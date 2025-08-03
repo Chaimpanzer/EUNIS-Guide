@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+#questionBox {
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#etat {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Tous les groupes spécifiques masqués par défaut */
+#question6,
+#question12,
+#question13,
+#question14,
+#question15 {
+  display: none;
+}
