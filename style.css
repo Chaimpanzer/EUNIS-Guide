@@ -1,23 +1,90 @@
+html {
+  height: 100%;
+  flex: content;
+
+}
+
+header {
+
+  background-color: rgba(1, 62, 24, 0.578);
+  height: 85px;
+  padding : 0;
+  border : 0;
+  width: 100%;
+  margin: 0;
+}
+
 body {
-  font-family: sans-serif;
-  padding: 20px;
+  font-family: Poppins;
+  margin : 0;
+  background-color: rgba(98, 146, 105, 0.578);
 }
 
 #questionBox {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
+.paragraphe {
+  font-weight: 600;
+  font-size: 40px; 
+  color : rgba(1, 12, 4, 0.822);
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.réponse {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 #etat {
+  height: 100px;
+
+  align-content: center;
+  ;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: larger ;
+  text-transform: uppercase;
+}
+
+
+button  {
+  border-color: rgba(240, 248, 255, 0);
+  text-align: center;
+  color: rgba(4, 41, 14, 0.718);
+  font-weight: 600;
+  border-radius: 100px;
+  background-color: rgba(235, 255, 237, 0.282);
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 25px;
+}
+
+button:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transform: translateY(2px) scale(0.98);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.416);
+}
+#etat {
+  font-size: 45px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   font-weight: bold;
   margin-top: 20px;
-  font-size: 18px;
+  color : rgba(1, 12, 4, 0.841);
+  text-shadow: 2px 2px 4px rgba(4, 37, 21, 0.244);
 }
+
 
 /* Tous les groupes spécifiques masqués par défaut */
 #question6,
