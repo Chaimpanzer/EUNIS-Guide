@@ -14,6 +14,15 @@
     <p id="questionText"></p>
   </div>
 
+  <div class="paragraphe" id="questionBox2" style="display:none;">
+    <p id="questionText2"></p>
+  </div>
+
+  <div class="réponse" id="niveau2Buttons" style="display:none;">
+    <button onclick="repondreOuiNiveau2()">OUI</button>
+   <button onclick="repondreNonNiveau2()">NON</button>
+  </div>
+
   <div :hover class="réponse" id="Questionbase">
     <button onclick="repondreOui()">OUI</button>
     <button onclick="repondreNon()">NON</button>
@@ -45,8 +54,12 @@
     <button onclick="repondreAutre15()">AUTRE</button>
   </div>
 
+<!-- créer un div par question spécifique niveau 2 -->
+
+
   <div id="etat"></div>
 
   <script src="script.js"></script>
+  
 </body>
 </html>

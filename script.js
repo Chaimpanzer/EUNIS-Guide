@@ -1,4 +1,8 @@
-let currentStep = 1;
+let currentStep = 1; // Étape actuelle de l'arbre de décision
+let etatFinal = ""; // Stockage de l'état A-J (niveau 1)
+let currentStep2 = 1;
+
+
 
 function cacherTousLesBoutons() {
   document.getElementById('Questionbase').style.display = 'none';
@@ -13,7 +17,14 @@ function afficherEtat(etat) {
   document.getElementById('questionBox').style.display = 'none';
   cacherTousLesBoutons();
   document.getElementById('etat').textContent = "Habitat identifié : État " + etat;
+  etatFinal = etat; // Stocke l'état pour le niveau 2
+  // Passe au niveau 2 après courte pause
+  if (etat === 'A') {
+    lancerNiveau2A();
+  }
 }
+
+
 
 function afficherQuestion(text, bouton) {
   document.getElementById('questionBox').style.display = 'block';
@@ -22,8 +33,58 @@ function afficherQuestion(text, bouton) {
   document.getElementById(bouton).style.display = 'block';
 }
 
+// Réponses niveau 2
+function repondreOuiNiveau2() {
+  if (etatFinal === 'A') {
+    if (currentStep2 === 1) {
+      afficherEtatFinalNiveau2('A7'); // Là ça chie
+    } else if (currentStep2 === 2) {
+      currentStep2 = 4;
+      afficherQuestion("A4 : Plateau continental ?", 'Questionbase');
+    } else if (currentStep2 === 4) {
+      currentStep2 = 5;
+      afficherQuestion("A5 : Substrat ?", 'Questionbase');
+    } else if (currentStep2 === 5) {
+      afficherEtatFinalNiveau2('A5');
+    } else if (currentStep2 === 6) {
+      afficherEtatFinalNiveau2('A3');
+    }
+  }
+}
+function repondreNonNiveau2() {
+  if (etatFinal === 'A') {
+    if (currentStep2 === 1) {
+      currentStep2 = 2;
+      afficherQuestion("A2 : Toujours immergés ?", 'Questionbase');
+    } else if (currentStep2 === 2) {
+      currentStep2 = 3;
+      afficherQuestion("A3 : Substrat ?", 'Questionbase');
+    } else if (currentStep2 === 3) {
+      afficherEtatFinalNiveau2('A1');
+    } else if (currentStep2 === 4) {
+      afficherEtatFinalNiveau2('A6');
+    } else if (currentStep2 === 5) {
+      currentStep2 = 6;
+      afficherQuestion("A6 : Caractérisé par des microalgues ?", 'Questionbase');
+    } else if (currentStep2 === 6) {
+      afficherEtatFinalNiveau2('A4');
+    }
+  }
+}
+
+
+function afficherEtatFinalNiveau2(etat) {
+  document.getElementById('questionBox').style.display = 'none';
+  cacherTousLesBoutons();
+  document.getElementById('etat').textContent = "Habitat final : " + etat;
+}
+
 // --- Arbre de décision ---
 function repondreOui() {
+  if (etatFinal && etatFinal === 'A') {
+    repondreOuiNiveau2();
+  return;
+  }
   if (currentStep === 1) {
     currentStep = 2;
     afficherQuestion("Régulièrement cultivés ?", 'Questionbase');
@@ -49,9 +110,17 @@ function repondreOui() {
   } else if (currentStep === 11) {
     afficherEtat('G');
   }
+
 }
 
+
+
+
 function repondreNon() {
+  if (etatFinal && etatFinal === 'A') {
+    repondreNonNiveau2();
+  return;
+  }
   if (currentStep === 1) {
     currentStep = 7;
     afficherQuestion("Souterrains ?", 'Questionbase');
@@ -78,6 +147,7 @@ function repondreNon() {
     currentStep = 12;
     afficherQuestion("Humidité ?", 'question12');
   }
+
 }
 
 // --- Question 6 ---
@@ -110,5 +180,19 @@ function repondreAutre14() { afficherEtat('D'); }
 function repondreArbustes15() { afficherEtat('F'); }
 function repondreAutre15() { afficherEtat('E'); }
 
+
+function lancerNiveau2A() {
+  currentStep2 = 1;
+  afficherQuestion("A1 : Strate ?", 'Questionbase');
+}
+
+
+
+
+
+
+
+
 // Init
 afficherQuestion("Habitats construits, très artificiels ou régulièrement cultivés ?", 'Questionbase');
+
