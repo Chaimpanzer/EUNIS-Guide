@@ -71,6 +71,24 @@ const data = {
         A6: "Habitats profonds",
         A7: "Habitats pélagiques"
       }
+    },
+    B: {
+    questions: [
+      {
+        id: "B1", // Question unique de l'étape B
+        text: "Type de substrat sous-jacent (Bᵢ)",
+        answers: [
+          { text: "Sable", next: "B1f" },
+          { text: "Galets et cailloutis", next: "B2f" },
+          { text: "Rocheux", next: "B3f" }
+        ]
+      }
+    ],
+    states: {
+      B1f: "Dunes côtières et rivages sableux",
+      B2f: "Galets côtiers",
+      B3f: "Falaises, corniches et rivages rocheux, incluant le supralittoral"
     }
   }
-};
+},
+}

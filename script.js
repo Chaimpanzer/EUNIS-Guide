@@ -91,6 +91,14 @@ function goToNext(next, phase) {
       document.getElementById('question').textContent = '';
       document.getElementById('answers').innerHTML = '';
       resultDiv.textContent = `Résultat final : ${state} (code : ${next})`;
+
+      // Ajouter un bouton retour même à l'état final
+      const backBtn = document.createElement('button');
+      backBtn.className = 'answer-btn';
+      backBtn.textContent = '⬅ Retour';
+      backBtn.addEventListener('click', () => goBack());
+      document.getElementById('answers').appendChild(backBtn);
+
       console.log("Historique complet :", history);
       return;
     }
@@ -118,6 +126,17 @@ function goBack() {
   } else {
     currentPhase = 2;
     displayQuestionByText(last.question, currentLevel2);
+  }
+}
+
+function displayQuestionByText(questionText, level2Key = null) {
+  let question;
+  if (!level2Key) {
+    question = data.questions.find(q => q.text === questionText);
+    displayQuestion(question.id);
+  } else {
+    question = data.level2[level2Key].questions.find(q => q.text === questionText);
+    displayLevel2Question(level2Key, question.id);
   }
 }
 
