@@ -32,9 +32,9 @@ const data = {
     J: "Zones bâties, sites industriels et autres habitats artificiels"
   },
 
-  // PHASE 2 : Sous-arbre pour l’état A uniquement
+  // PHASE 2 : 
   level2: {
-    A: {
+    A: { // Questions et réponses pour le niveau A
       questions: [
         { id: "Aun", text: "Strate", answers: [
           { text: "Colonne d'eau", next: "A7" },
@@ -72,7 +72,7 @@ const data = {
         A7: "Habitats pélagiques"
       }
     },
-    B: {
+    B: { // Questions et réponses pour le niveau B
     questions: [
       {
         id: "Bun", // Question unique de l'étape B
@@ -89,6 +89,90 @@ const data = {
       B2: "Galets côtiers",
       B3: "Falaises, corniches et rivages rocheux, incluant le supralittoral"
     }
-  }
+  },
+  C: { // Questions et réponses pour le niveau C
+    questions: [ 
+      {id: "Cun", text: "Eau peu profonde avec végétation émergée en bordure, périodiquement inondée ou rives à forte humidité",answers: [
+          { text: "Oui", next: "C3" },
+          { text: "Non", next: "Cdeux" }
+      ]},
+      { id: "Cdeux", text: "Eaux dormantes ou courantes", answers: [
+          { text: "Dormantes", next: "C1" },
+          { text: "Courantes", next: "C2" }
+        ]}],
+    states: { 
+      C1: "Eaux dormantes de surface",
+      C2: "Eaux courantes de surface",
+      C3:"Zones littorales des eaux de surface continentales",
+    }
+  },
+    D: { // Questions et réponses pour le niveau D
+    questions: [ 
+      {id: "Dun", text: "Sources d'eau",answers: [
+          { text: "Eau de pluie uniquement", next: "D1" },
+          { text: "Autres", next: "Ddeux" }
+      ]},
+      { id: "Ddeux", text: "Formation de tourbe à la surface de l'eau", answers: [
+          { text: "Oui", next: "D2" },
+          { text: "Non", next: "Dtrois" }
+   ]},
+         { id: "Dtrois", text: "Acide", answers: [
+          { text: "Oui", next: "D2" },
+          { text: "Non", next: "Dquatre" }
+   ]},
+         { id: "Dquatre", text: "Salé ou saumâtre", answers: [
+          { text: "Oui", next: "D6" },
+          { text: "Non", next: "Dcinq" }
+   ]},
+         { id: "Dcinq", text: "Dominé par quelques espèces de grandes hélophytes", answers: [
+          { text: "Oui", next: "D5" },
+          { text: "Non", next: "D4" }
+   ]}],
+   states: { 
+      D1: "Tourbières hautes et tourbières de couverture",
+      D2: "Tourbières de vallées, bas-marais acides et tourbières de transition",
+      D3: "ABCD",
+      D4:"Bas-marais riches en bases et tourbières des sources calcaires",
+      D5: "Roselières sèches et cariçaies, normalement sans eau libre",
+      D6: "Marais continentaux salés et saumâtres et roselières",
+    }
+  },
+  E: { // Questions et réponses pour le niveau E
+    questions: [ 
+      {id: "Eun", text: "Présence significative d'arbres",answers: [
+          { text: "Oui", next: "E7" },
+          { text: "Non", next: "Edeux" }
+      ]},
+      { id: "Edeux", text: "Salé", answers: [
+          { text: "Oui", next: "E6" },
+          { text: "Non", next: "Etrois" }
+   ]},
+         { id: "Etrois", text: "Espèces dominantes", answers: [
+          { text: "Grandes herbacées non graminoïdes et fougères", next: "Equatre" },
+          { text: "Autre", next: "Ecinq" }
+   ]},
+         { id: "Equatre", text: "Très sec avec des espèces inappétentes", answers: [
+          { text: "Oui", next: "E1" },
+          { text: "Non", next: "E5" }
+   ]},
+         { id: "Ecinq", text: "Zone climatique", answers: [
+          { text: "Alpin", next: "E4" },
+          { text: "Autre", next: "Esix" }
+   ]},
+            { id: "Esix", text: "Gradient d'humidité", answers: [
+          { text: "Sec", next: "E1" },
+          { text: "Mésique", next: "E2" },
+          { text: "Humide", next: "E3" }
+   ]}],
+   states: { 
+      E1: "Pelouses sèches",
+      E2: "Prairies mésiques",
+      E3: "Prairies humides et prairies humides saisonnières",
+      E4: "Pelouses alpines et subalpines",
+      E5: "Ourlets, clairières forestières et peuplements de grandes herbacées non graminoïdes",
+      E6: "Steppes salées continentales",
+      E7 : "Prairies peu boisées",
+    }
+  },
 },
 }
