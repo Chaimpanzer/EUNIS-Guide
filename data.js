@@ -75,19 +75,19 @@ const data = {
     B: {
     questions: [
       {
-        id: "B1", // Question unique de l'étape B
-        text: "Type de substrat sous-jacent (Bᵢ)",
+        id: "Bun", // Question unique de l'étape B
+        text: "Type de substrat sous-jacent",
         answers: [
-          { text: "Sable", next: "B1f" },
-          { text: "Galets et cailloutis", next: "B2f" },
-          { text: "Rocheux", next: "B3f" }
+          { text: "Sable", next: "B1" },
+          { text: "Galets et cailloutis", next: "B2" },
+          { text: "Rocheux", next: "B3" }
         ]
       }
     ],
     states: {
-      B1f: "Dunes côtières et rivages sableux",
-      B2f: "Galets côtiers",
-      B3f: "Falaises, corniches et rivages rocheux, incluant le supralittoral"
+      B1: "Dunes côtières et rivages sableux",
+      B2: "Galets côtiers",
+      B3: "Falaises, corniches et rivages rocheux, incluant le supralittoral"
     }
   }
 },
