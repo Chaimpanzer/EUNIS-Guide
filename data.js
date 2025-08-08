@@ -174,5 +174,136 @@ const data = {
       E7 : "Prairies peu boisées",
     }
   },
+    F: { // Questions et réponses pour le niveau F
+    questions: [ 
+      {id: "Fun", text: "Ceinture étroite d'arbustes",answers: [
+          { text: "Oui", next: "FA" },
+          { text: "Non", next: "Fdeux" }
+      ]},
+      { id: "Fdeux", text: "Régulièrement cultivés ou plantés", answers: [
+          { text: "Oui", next: "FB" },
+          { text: "Non", next: "Ftrois" }
+   ]},
+         { id: "Ftrois", text: "Sur sol engorgé ou en bordure d'une masse d'eau", answers: [
+          { text: "Oui", next: "F9" },
+          { text: "Non", next: "Fquatre" }
+   ]},
+         { id: "Fquatre", text: "Strate de végétation dominante", answers: [
+          { text: "Autres", next: "Fcinq" },
+          { text: "Fourrés épineux formant des coussins", next: "F7" }
+   ]},
+         { id: "Fcinq", text: "Climat", answers: [
+          { text: "Froid à froid tempéré", next: "F2" },
+          { text: "Tempéré ou méditerranéo-montagnard", next: "Fsix" },
+          { text: "Méditerranéen ou subdésertique", next: "Fsept" }
+   ]},
+         { id: "Fsix", text: "Type de végétation dominante", answers: [
+          { text: "Autre", next: "F3" },
+          { text: "Éricoïde", next: "F4" },
+          { text: "Sclérophylle", next: "F6" }
+   ]},
+         { id: "Fsept", text: "Structure", answers: [
+          { text: "Ouverte", next: "F6" },
+          { text: "Fermée", next: "F5" }
+   ]}],
+   states: { 
+      FA: "Haies",
+      FB: "Plantations d'arbustes",
+      F2: "Fourrés arctiques, alpins et subalpins",
+      F3: "Fourrés tempérés et méditerranéo-montagnards",
+      F4: "Landes arbustives tempérées",
+      F5: "Maquis, matorrals arborescents et fourrés thermo-méditerranéens",
+      F6 : "Garrigues",
+      F7 : "Landes épineuses méditerranéennes (phryganes, landes-hérissons et végétations apparentées des falaises littorales)",
+      F9 : "Fourrés ripicoles et des bas-marais",
+    }
+  },
+    G: { // Questions et réponses pour le niveau G
+    questions: [ 
+      {id: "Gun", text: "Type de boisement",answers: [
+          { text: "Autre", next: "G5" },
+          { text: "Forestier", next: "Gdeux" }
+      ]},
+      { id: "Gdeux", text: "Types d'arbres caractéristiques", answers: [
+          { text: "Feuillus caducifoliés", next: "G1" },
+          { text: "Feuillus sempervirents", next: "G2" },
+          { text: "Conifères", next: "G3" },
+          { text: "Mélanges", next: "G4" }
+   ]}],
+   states: { 
+      G1: "Forêts de feuillus caducifoliés",
+      G2: "Forêts de feuillus sempervirents",
+      G3: "Forêts de conifères",
+      G4: "Formations mixtes d'espèces caducifoliées et de conifères",
+      G5: "Alignements d'arbres, petits bois anthropiques, boisements récemment abattus, stades initiaux de boisements et taillis",
+    }
+  },
+    H: { // Questions et réponses pour le niveau H
+    questions: [ 
+      {id: "Hun", text: "De surface ou souterrains",answers: [
+          { text: "Souterrains", next: "H1" },
+          { text: "Surface", next: "Hdeux" }
+      ]},
+      { id: "Hdeux", text: "Substrat", answers: [
+          { text: "Neige et glace", next: "H4" },
+          { text: "Origine volcanique récente", next: "H6" },
+          { text: "Autre", next: "Htrois" }
+   ]},
+         {id: "Htrois", text: "Roche-mère",answers: [
+          { text: "Oui", next: "H3" },
+          { text: "Non", next: "Hquatre" }
+      ]},
+        {id: "Hquatre", text: "Pente raide et rochers mobiles",answers: [
+          { text: "Oui", next: "H2" },
+          { text: "Non", next: "H5" }
+      ]}],
+   states: { 
+      H1: "Grottes, systèmes de grottes, passages et plans d'eau souterrains terrestres",
+      H2: "Éboulis",
+      H3: "Falaises continentales, pavements rocheux et affleurements rocheux",
+      H4: "Habitats dominés par la neige ou la glace",
+      H5: "Habitats continentaux divers sans végétation ou à végétation clairsemée",
+      H6: "Reliefs volcaniques récents",
+    }
+  },
+   I: { // Questions et réponses pour le niveau I
+    questions: [ 
+      {id: "Iun", text: "Usage",answers: [
+          { text: "Agriculture ou horticulture commerciale", next: "I1" },
+          { text: "Ornemental ou à proximité des habitations", next: "I2" }
+      ]}],
+   states: { 
+      I1: "Cultures et jardins maraîchers",
+      I2: "Zones cultivées des jardins et parcs",
+    }
+  },
+   J: { // Questions et réponses pour le niveau J
+    questions: [ 
+      {id: "Jun", text: "Aquatiques",answers: [
+          { text: "Oui", next: "J5" },
+          { text: "Non", next: "Jdeux" }
+      ]},
+      {id: "Jdeux", text: "Déchets",answers: [
+          { text: "Oui", next: "J6" },
+          { text: "Non", next: "Jtrois" }
+      ]},
+      {id: "Jtrois", text: "Usage",answers: [
+          { text: "Transports, loisirs, cimetières", next: "J4" },
+          { text: "Industries extracives", next: "J3" },
+          { text: "Autre", next: "Jquatre" },
+      ]},
+      {id: "Jquatre", text: "Densité",answers: [
+          { text: "Moyenne à forte", next: "J1" },
+          { text: "Basse", next: "J2" }
+      ]}],
+   states: { 
+      J1: "Bâtiments des villes et des villages",
+      J2: "Constructions à faible densité",
+      J3: "Sites industriels d'extraction",
+      J4: "Réseaux de transport et autres zones de construction à surface dure",
+      J5: "Plans d'eau constuits très artificiels et structures connexes",
+      J6: "Dépôts de déchets",
+    }
+  },
 },
 }
