@@ -306,4 +306,33 @@ const data = {
     }
   },
 },
+level3: {
+  A1: { 
+    questions: [
+      { id: "A1q1", text: "Espèces végétales annuelles opportunistes", answers: [
+        { text: "Oui", next: "A1.4" },
+        { text: "Non", next: "A1q2" }
+      ]},
+      { id: "A1q2", text: "Grottes/surplombs", answers: [
+        { text: "Oui", next: "A1.4" },
+        { text: "Non", next: "A1q3" }
+      ]},
+      { id: "A1q3", text: "Cuvettes et mares permanentes", answers: [
+        { text: "Oui", next: "A1.4" },
+        { text: "Non", next: "A1q4" }
+      ]},
+      { id: "A1q4", text: "Hydrodynamisme", answers: [
+        { text: "Fort", next: "A1.1" },
+        { text: "Modéré", next: "A1.2" },
+        { text: "Faible à négligeable", next: "A1.3" }
+      ]},
+    ],
+    states: {
+      'A1.1': "Roche intertidale sous fort hydrodynamisme",
+      'A1.2': "Roche intertidale sous hydrodynamisme modéré",
+      'A1.3': "Roche intertidale sous faible hydrodynamisme",
+      'A1.4': "Habitats rocheux intertidaux particuliers",
+    }
+  }
+},
 }

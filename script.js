@@ -67,18 +67,27 @@ function renderQuestion(question, phase) {
 // --- NAVIGATION ---
 function goToNext(next, phase) {
   const resultDiv = document.getElementById('result');
+  const questionDiv = document.getElementById('question');
+  const answersDiv = document.getElementById('answers');
 
   if (phase === 1) {
     if (data.states[next]) {
       localStorage.setItem('phase1', next);
+      questionDiv.textContent = '';
+      answersDiv.innerHTML = '';
       resultDiv.textContent = `Résultat phase 1 : ${data.states[next]} (code : ${next})`;
 
-      // Lancer phase 2 si elle existe
       if (data.level2[next]) {
-        setTimeout(() => {
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'answer-btn';
+        nextBtn.textContent = '➡ Passer à l’étape 2';
+        nextBtn.addEventListener('click', () => {
           displayLevel2Question(next, data.level2[next].questions[0].id);
-        }, 1000);
+        });
+        answersDiv.appendChild(nextBtn);
       }
+
+      addSaveButton(answersDiv);
       return;
     }
     displayQuestion(next);
@@ -88,22 +97,66 @@ function goToNext(next, phase) {
     const state = data.level2[currentLevel2]?.states[next];
     if (state) {
       localStorage.setItem('phase2', next);
-      document.getElementById('question').textContent = '';
-      document.getElementById('answers').innerHTML = '';
-      resultDiv.textContent = `Résultat final : ${state} (code : ${next})`;
+      questionDiv.textContent = '';
+      answersDiv.innerHTML = '';
+      resultDiv.textContent = `Résultat phase 2 : ${state} (code : ${next})`;
 
-      // Ajouter un bouton retour même à l'état final
-      const backBtn = document.createElement('button');
-      backBtn.className = 'answer-btn';
-      backBtn.textContent = '⬅ Retour';
-      backBtn.addEventListener('click', () => goBack());
-      document.getElementById('answers').appendChild(backBtn);
+      if (data.level3 && data.level3[next]) {
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'answer-btn';
+        nextBtn.textContent = '➡ Passer à l’étape 3';
+        nextBtn.addEventListener('click', () => {
+          displayLevel3Question(next, data.level3[next].questions[0].id);
+        });
+        answersDiv.appendChild(nextBtn);
+      }
 
-      console.log("Historique complet :", history);
+      addSaveButton(answersDiv);
       return;
     }
     displayLevel2Question(currentLevel2, next);
   }
+
+  if (phase === 3) {
+    const state = data.level3[currentLevel3]?.states[next];
+    if (state) {
+      localStorage.setItem('phase3', next);
+      questionDiv.textContent = '';
+      answersDiv.innerHTML = '';
+      resultDiv.textContent = `Résultat final étape 3 : ${state} (code : ${next})`;
+      addSaveButton(answersDiv);
+      return;
+    }
+    displayLevel3Question(currentLevel3, next);
+  }
+}
+
+// --- ÉTAPE 3 ---
+let currentLevel3 = null;
+
+function getLevel3QuestionById(stateKey, id) {
+  return data.level3[stateKey]?.questions.find(q => q.id === id);
+}
+
+function displayLevel3Question(stateKey, id) {
+  currentPhase = 3;
+  currentLevel3 = stateKey;
+  const question = getLevel3QuestionById(stateKey, id);
+  renderQuestion(question, 3);
+}
+
+
+
+// --- SAUVEGARDE ---
+function addSaveButton(container) {
+  const saveBtn = document.createElement('button');
+  saveBtn.className = 'answer-btn';
+  saveBtn.textContent = '💾 Sauvegarder la progression';
+  saveBtn.addEventListener('click', () => {
+    localStorage.setItem('progress', JSON.stringify(history));
+    alert('Progression sauvegardée !');
+  });
+  container.appendChild(saveBtn);
 }
 
 // --- RETOUR EN ARRIÈRE ---
