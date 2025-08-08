@@ -458,5 +458,98 @@ level3: { // Questions et réponses pour le niveau 3
       'A5.7': "Habitats particuliers rocheux infralittoraux",
     }
   },
+  A6: { // Niveau A6
+  questions: [
+    { 
+      id: "A6q1", 
+      text: "Caractérisé par des conditions chimiques", 
+      answers: [
+        { text: "Oui", next: "A6.9" },
+        { text: "Non", next: "A6q2" }
+      ]
+    },
+    { 
+      id: "A6q2", 
+      text: "Éléments remarquables du relief", 
+      answers: [
+        { text: "Dépression", next: "A6.8" },
+        { text: "Prominence", next: "A6.7" },
+        { text: "Plat", next: "A6q3" }
+      ]
+    },
+    { 
+      id: "A6q3", 
+      text: "Substrat", 
+      answers: [
+        { text: "Roche", next: "A6.1" },
+        { text: "Biogénique", next: "A6.6" },
+        { text: "Hétérogènes/graviers", next: "A6.2" },
+        { text: "Sable", next: "A6.3" },
+        { text: "Sable vaseux", next: "A6.4" },
+        { text: "Vase", next: "A6.5" }
+      ]
+    }
+  ],
+  states: {
+    "A6.1": "Roche et substrats durs artificiels profonds",
+    "A6.2": "Substrats hétérogènes profonds",
+    "A6.3": "Sable profond",
+    "A6.4": "Sable vaseux profond",
+    "A6.5": "Vase profonde",
+    "A6.6": "Biohermes profonds",
+    "A6.7": "Reliefs proéminents profonds",
+    "A6.8": "Fosses océaniques, canyons, chenaux, ruptures de pente et éboulements sur le talus continental",
+    "A6.9": "Sources hydrothermales, sources de fluide froid, habitats hypoxiques et anoxiques des grands fonds"
+  }
+},
+  A7: { // Niveau A7
+  questions: [
+    { 
+      id: "A7q1", 
+      text: "Habitats pélagiques", 
+      answers: [
+        { text: "Suivant", next: "A7.1" }
+      ]
+    }
+  ],
+  states: {
+    "A7.1": "Neuston",
+  }},
+  B1: { // Niveau B1
+    questions: [
+      { id: "B1q1", text: "Topographie", answers: [
+        { text: "Plus ou moins plane", next: "B1q2" },
+        { text: "Dunes", next: "B1q3" }
+      ]},
+      { id: "B1q2", text: "Au-dessus de la laisse de mer", answers: [
+        { text: "Oui", next: "B1.2" },
+        { text: "Non", next: "B1.1" }
+      ]},
+      { id: "B1q3", text: "Humidité", answers: [
+        { text: "Humide", next: "B1.8" },
+        { text: "Sec", next: "B1q4" }
+      ]},
+      { id: "B1q4", text: "Mobile", answers: [
+        { text: "Oui", next: "B1.3" },
+        { text: "Non", next: "B1q5" }
+      ]},
+      { id: "B1q5", text: "Strate végétale", answers: [
+        { text: "Herbes", next: "B1.4" },
+        { text: "Arbustes nains", next: "B1.5" },
+        { text: "Arbustes", next: "B1.6" },
+        { text: "Arbres", next: "B1.7" },
+      ]},
+    ],
+    states: {
+      'B1.1': 'Laisses de mer des plages sableuses',
+      'B1.2': 'Plages sableuses au-dessus de la laisse de mer',
+      'B1.3': 'Dunes côtières mobiles',
+      'B1.4': 'Pelouses des dunes côtières fixées (dunes grises)',
+      'B1.5': 'Landes des dunes côtières',
+      'B1.6': 'Fruticées des dunes côtières',
+      'B1.7': 'Dunes côtières boisées',
+      'B1.8': 'Pannes dunaires mouilleuses et humides',
+    }
+  },
 },
 }
