@@ -306,8 +306,8 @@ const data = {
     }
   },
 },
-level3: {
-  A1: { 
+level3: { // Questions et réponses pour le niveau 3
+  A1: { // Niveau A1
     questions: [
       { id: "A1q1", text: "Espèces végétales annuelles opportunistes", answers: [
         { text: "Oui", next: "A1.4" },
@@ -333,6 +333,73 @@ level3: {
       'A1.3': "Roche intertidale sous faible hydrodynamisme",
       'A1.4': "Habitats rocheux intertidaux particuliers",
     }
-  }
+  },
+
+    A2: { // Niveau A2
+    questions: [
+      { id: "A2q1", text: "Se développant autour de sources de fluides", answers: [
+        { text: "Oui", next: "A2.8" },
+        { text: "Non", next: "A2q2" }
+      ]},
+      { id: "A2q2", text: "Algues annuelles et opportunistes", answers: [
+        { text: "Oui", next: "A2.8" },
+        { text: "Non", next: "A2q3" }
+      ]},
+      { id: "A2q3", text: "Présence d'angiospermes", answers: [
+        { text: "Oui", next: "A2q4" },
+        { text: "Non", next: "A2q5" }
+      ]},
+      { id: "A2q4", text: "Dominance d'angiospermes", answers: [
+        { text: "Terrestres", next: "A2.5" },
+        { text: "Aquatiques", next: "A2.6" }
+      ]},
+      { id: "A2q5", text: "Substrat", answers: [
+        { text: "Gravier ou sable grossier", next: "A2.1" },
+        { text: "Sable fin ou sable vaseux", next: "A2.2" },
+        { text: "Vase", next: "A2.3" },
+        { text: "Combinaison de substrats", next: "A2.4" },
+        { text: "Biogénique", next: "A2.7" }
+      ]},
+    ],
+    states: {
+      'A2.1': "Sédiments grossiers intertidaux",
+      'A2.2': "Sables et sables vaseux intertidaux",
+      'A2.3': "Vase intertidale",
+      'A2.4': "Sédiments hétérogènes intertidaux",
+      'A2.5': "Marais salés côtiers et roselières salines",
+      'A2.6': "Sédiments intertidaux dominés par des Angiospermes aquatiques",
+      'A2.7': "Récifs biogènes intertidaux",
+      'A2.8': "Habitats sédimentaires particuliers intertidaux",
+    }
+  },
+  A3: { // Niveau A3
+    questions: [
+      { id: "A3q1", text: "Se développant autour de sources de fluides", answers: [
+        { text: "Oui", next: "A3.7" },
+        { text: "Non", next: "A3q2" }
+      ]},
+      { id: "A3q2", text: "Substrats artificiels récemment colonisés", answers: [
+        { text: "Oui", next: "A3.7" },
+        { text: "Non", next: "A3q3" }
+      ]},
+      { id: "A3q3", text: "Grottes, surplombs ou crevasses", answers: [
+        { text: "Oui", next: "A3.7" },
+        { text: "Non", next: "A3q4" }
+      ]},
+      { id: "A3q4", text: "Hydrodynamisme", answers: [
+        { text: "Gravier ou sable grossier", next: "A3.1" },
+        { text: "Sable fin ou sable vaseux", next: "A3.2" },
+        { text: "Vase", next: "A3.3" },
+        { text: "Combinaison de substrats", next: "A2.4" },
+        { text: "Biogénique", next: "A2.7" }
+      ]},
+    ],
+    states: {
+      'A3.1': "Roche infralittorale de l'Atlantique et de la Méditerranée sous fort hydrodynamisme",
+      'A3.2': "Roche infralittorale de l'Atlantique et de la Méditerranée sous hydrodynamisme modéré",
+      'A3.3': "Roche infralittorale de l'Atlantique et de la Méditerranée sous faible hydrodynamisme",
+      'A3.7': "Habitats particuliers rocheux infralittoraux",
+    }
+  },
 },
 }

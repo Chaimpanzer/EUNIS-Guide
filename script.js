@@ -58,7 +58,7 @@ function renderQuestion(question, phase) {
     // Bouton retour
   const backBtn = document.createElement('button');
   backBtn.className = 'answer-btn';
-  backBtn.textContent = '⬅ Retour';
+  backBtn.textContent = 'Retour en arrière';
   backBtn.addEventListener('click', () => goBack());
   answersDiv.appendChild(backBtn);
 }
@@ -75,12 +75,12 @@ function goToNext(next, phase) {
       localStorage.setItem('phase1', next);
       questionDiv.textContent = '';
       answersDiv.innerHTML = '';
-      resultDiv.textContent = `Résultat phase 1 : ${data.states[next]} (code : ${next})`;
+      resultDiv.textContent = `Identification niveau 1 : ${data.states[next]} ( ${next})`;
 
       if (data.level2[next]) {
         const nextBtn = document.createElement('button');
         nextBtn.className = 'answer-btn';
-        nextBtn.textContent = '➡ Passer à l’étape 2';
+        nextBtn.textContent = '➡ Passer à l’identification niveau 2';
         nextBtn.addEventListener('click', () => {
           displayLevel2Question(next, data.level2[next].questions[0].id);
         });
@@ -99,12 +99,12 @@ function goToNext(next, phase) {
       localStorage.setItem('phase2', next);
       questionDiv.textContent = '';
       answersDiv.innerHTML = '';
-      resultDiv.textContent = `Résultat phase 2 : ${state} (code : ${next})`;
+      resultDiv.textContent = `Identification niveau 2 : ${state} ( ${next})`;
 
       if (data.level3 && data.level3[next]) {
         const nextBtn = document.createElement('button');
         nextBtn.className = 'answer-btn';
-        nextBtn.textContent = '➡ Passer à l’étape 3';
+        nextBtn.textContent = '➡ Passer à l’identification niveau 3';
         nextBtn.addEventListener('click', () => {
           displayLevel3Question(next, data.level3[next].questions[0].id);
         });
@@ -123,7 +123,7 @@ function goToNext(next, phase) {
       localStorage.setItem('phase3', next);
       questionDiv.textContent = '';
       answersDiv.innerHTML = '';
-      resultDiv.textContent = `Résultat final étape 3 : ${state} (code : ${next})`;
+      resultDiv.textContent = `Identification niveau 3 : ${state} ( ${next})`;
       addSaveButton(answersDiv);
       return;
     }
@@ -151,7 +151,7 @@ function displayLevel3Question(stateKey, id) {
 function addSaveButton(container) {
   const saveBtn = document.createElement('button');
   saveBtn.className = 'answer-btn';
-  saveBtn.textContent = '💾 Sauvegarder la progression';
+  saveBtn.textContent = 'Sauvegarder la progression';
   saveBtn.addEventListener('click', () => {
     localStorage.setItem('progress', JSON.stringify(history));
     alert('Progression sauvegardée !');
