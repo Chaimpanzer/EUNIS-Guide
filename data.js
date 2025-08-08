@@ -387,11 +387,9 @@ level3: { // Questions et réponses pour le niveau 3
         { text: "Non", next: "A3q4" }
       ]},
       { id: "A3q4", text: "Hydrodynamisme", answers: [
-        { text: "Gravier ou sable grossier", next: "A3.1" },
-        { text: "Sable fin ou sable vaseux", next: "A3.2" },
-        { text: "Vase", next: "A3.3" },
-        { text: "Combinaison de substrats", next: "A2.4" },
-        { text: "Biogénique", next: "A2.7" }
+        { text: "Fort", next: "A3.1" },
+        { text: "Modéré", next: "A3.2" },
+        { text: "Faible à négligeable", next: "A3.3" }
       ]},
     ],
     states: {
@@ -399,6 +397,65 @@ level3: { // Questions et réponses pour le niveau 3
       'A3.2': "Roche infralittorale de l'Atlantique et de la Méditerranée sous hydrodynamisme modéré",
       'A3.3': "Roche infralittorale de l'Atlantique et de la Méditerranée sous faible hydrodynamisme",
       'A3.7': "Habitats particuliers rocheux infralittoraux",
+    }
+  },
+    A4: { // Niveau A4
+    questions: [
+      { id: "A4q1", text: "Se développant autour de sources de fluides", answers: [
+        { text: "Oui", next: "A4.7" },
+        { text: "Non", next: "A4q2" }
+      ]},
+      { id: "A4q2", text: "Substrats artificiels récemment colonisés", answers: [
+        { text: "Oui", next: "A4.7" },
+        { text: "Non", next: "A4q3" }
+      ]},
+      { id: "A4q3", text: "Grottes, surplombs ou crevasses", answers: [
+        { text: "Oui", next: "A4.7" },
+        { text: "Non", next: "A4q4" }
+      ]},
+      { id: "A4q4", text: "Hydrodynamisme", answers: [
+        { text: "Fort", next: "A4.1" },
+        { text: "Modéré", next: "A4.2" },
+        { text: "Faible à négligeable", next: "A4.3" }
+      ]},
+    ],
+    states: {
+      'A4.1': "Roche circalittorale de l'Atlantique et de la Méditerranée sous fort hydrodynamisme",
+      'A4.2': "Roche circalittorale de l'Atlantique et de la Méditerranée sous hydrodynamisme modéré",
+      'A4.3': "Roche circalittorale de l'Atlantique et de la Méditerranée sous faible hydrodynamisme",
+      'A4.7': "Habitats rocheux circalittoraux particuliers",
+    }
+  },
+  A5: { // Niveau A5
+    questions: [
+      { id: "A5q1", text: "Résurgences", answers: [
+        { text: "Oui", next: "A5.7" },
+        { text: "Non", next: "A5q2" }
+      ]},
+      { id: "A5q2", text: "Enrichi en matière organique ou anoxique", answers: [
+        { text: "Oui", next: "A5.7" },
+        { text: "Non", next: "A5q3" }
+      ]},
+      { id: "A5q3", text: "Dominé par les macrophytes", answers: [
+        { text: "Oui", next: "A5.5" },
+        { text: "Non", next: "A5q4" }
+      ]},
+      { id: "A5q4", text: "Substrat", answers: [
+        { text: "Gravier ou sable grossier", next: "A5.1" },
+        { text: "Sable fin ou sable vaseux", next: "A5.2" },
+        { text: "Vase", next: "A5.3" },
+        { text: "Combinaison de substrat", next: "A5.4" },
+        { text: "Biogénique", next: "A5.6" }
+      ]},
+    ],
+    states: {
+      'A5.1': "Sédiment grossier intertidal",
+      'A5.2': "Sable subtidal",
+      'A5.3': "Vase subtidale",
+      'A5.4': "Sédiments hétérogènes subtidaux ",
+      'A5.5': "Sédiment subtidal dominé par des macrophytes",
+      'A5.6': "Récifs biogènes subtidaux",
+      'A5.7': "Habitats particuliers rocheux infralittoraux",
     }
   },
 },
