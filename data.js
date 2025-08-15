@@ -551,5 +551,227 @@ level3: { // Questions et réponses pour le niveau 3
       'B1.8': 'Pannes dunaires mouilleuses et humides',
     }
   },
-},
+  B2: { // Niveau B2
+    questions: [
+      { id: "B2q1", text: "Laisse de mer", answers: [
+        { text: "Oui", next: "B2.1" },
+        { text: "Non", next: "B2q2" }
+      ]},
+      { id: "B2q2", text: "Avec de la végétation", answers: [
+        { text: "Oui", next: "B2q3" },
+        { text: "Non", next: "B2.2" }
+      ]},
+      { id: "B2q3", text: "Galets et cailloutis stabilisés par la végétation", answers: [
+        { text: "Oui", next: "B2q4" },
+        { text: "Non", next: "B2.3" }
+      ]},
+      { id: "B2q4", text: "Strate végétale", answers: [
+        { text: "Herbes", next: "B2.4" },
+        { text: "Arbustes", next: "B2.5" },
+        { text: "Arbres", next: "B2.6" },
+      ]},
+    ],
+    states: {
+      'B2.1': 'Laisses de mer des plages de galets',
+      'B2.2': 'Plages de galets mobiles sans végétation au-dessus du niveau des laisses de mer',
+      'B2.3': 'Partie supérieure des plages de galets avec végétation ouverte',
+      'B2.4': 'Plages de galets fixées à végétation herbacée',
+      'B2.5': 'Plages de galets et de graviers à arbustes',
+      'B2.6': 'Boisements des plages de galets et de graviers',
+    }
+  }, 
+    B3: { // Niveau B3
+    questions: [
+      { id: "B3q1", text: "Zone humectée par les embruns", answers: [
+        { text: "Oui", next: "B3.1" },
+        { text: "Non", next: "B3q2" }
+      ]},
+      { id: "B3q2", text: "Roche dure", answers: [
+        { text: "Oui", next: "B3q3" },
+        { text: "Non", next: "B3.4" }
+      ]},
+      { id: "B3q3", text: "Avec de la végétation", answers: [
+        { text: "Oui", next: "B3.3" },
+        { text: "Non", next: "B3.2" }
+      ]},
+    ],
+    states: {
+      'B3.1': 'Roche supralittorale (zone à lichens ou à embruns)',
+      'B3.2': 'Falaises, corniches, rivages et îlots rocheux sans végétation',
+      'B3.3': 'Falaises, corniches et rivages rocheux à Angiospermes',
+      'B3.4': 'Falaises littorales à substrat meuble, souvent avec un couvert végétal',
+    }
+  }, 
+      C1: { // Niveau C1
+    questions: [
+      { id: "C1q1", text: "Temporaire", answers: [
+        { text: "Oui", next: "C1.6" },
+        { text: "Non", next: "C1q2" }
+      ]},
+      { id: "C1q2", text: "Salé", answers: [
+        { text: "Oui", next: "C1.5" },
+        { text: "Non", next: "C1q3" }
+      ]},
+      { id: "C1q3", text: "État trophique", answers: [
+        { text: "Dystrophe", next: "C1.4" },
+        { text: "Eutrophe", next: "C1.3" },
+        { text: "Mésotrophe", next: "C1.2" },
+        { text: "Oligotrophe", next: "C1.1" }
+      ]},
+    ],
+    states: {
+      'C1.1': 'Lacs, étangs et mares oligotrophes permanents',
+      'C1.2': 'Lacs, étangs et mares mésotrophes permanents',
+      'C1.3': 'Lacs, étangs et mares eutrophes permanents',
+      'C1.4': 'Lacs, étangs et mares permanents dystrophes',
+      'C1.5': 'Lacs, étangs et mares continentaux salés et saumâtres permanents',
+      'C1.6': 'Lacs, étangs et mares temporaires',
+    }
+  }, 
+        C2: { // Niveau C2
+    questions: [
+      { id: "C2q1", text: "Temporaire", answers: [
+        { text: "Oui", next: "C2.5" },
+        { text: "Non", next: "C2q2" }
+      ]},
+      { id: "C2q2", text: "Sources", answers: [
+        { text: "Oui", next: "C2.1" },
+        { text: "Non", next: "C2q3" }
+      ]},
+      { id: "C2q3", text: "Film d'eau sur la roche", answers: [
+        { text: "Oui", next: "C2.6" },
+        { text: "Non", next: "C2q4 }
+      ]},
+        { id: "C2q4", text: "Marée", answers: [
+        { text: "Oui", next: "C2.4" },
+        { text: "Non", next: "C2q5" }
+      ]},
+        { id: "C2q5", text: "Écoulement", answers: [
+        { text: "Lent à laminaire", next: "C2.3" },
+        { text: "Rapide et turbulent", next: "C2.2" }
+      ]},
+    ],
+    states: {
+      'C2.1': 'Sources, ruisseaux de sources et geysers',
+      'C2.2': "Cours d'eau permanents, non soumis aux marées, à écoulement turbulent et rapide",
+      'C2.3': "Cours d'eau permanents non soumis aux marées, à débit régulier",
+      'C2.4': "Fleuves et rivières tidaux en amont de l'estuaire",
+      'C2.5': 'Eaux courantes temporaires',
+      'C2.6': "Films d'eau coulant sur les marges d'un cours d'eau rocheux",
+    }
+  }, 
+  C3: { // Niveau C3
+    questions: [
+      { id: "C3q1", text: "Dépendant de la bruine", answers: [
+        { text: "Oui", next: "C3.8" },
+        { text: "Non", next: "C3q2" }
+      ]},
+      { id: "C3q2", text: "Végétation riveraine permanente", answers: [
+        { text: "Oui", next: "C3q5" },
+        { text: "Non", next: "C3q3" }
+      ]},
+      { id: "C3q3", text: "Végétation éphémère", answers: [
+        { text: "Oui", next: "C3.5" },
+        { text: "Non", next: "C3q4" }
+      ]},
+        { id: "C3q4", text: "Substrat", answers: [
+        { text: "Sédiments mobiles", next: "C3.6" },
+        { text: "Sédiments non mobiles", next: "C3.7" }
+      ]},
+        { id: "C3q5", text: "Diversité spécifique", answers: [
+        { text: "Forte", next: "C3.1" },
+        { text: "Faible", next: "C3q6 }
+      ]},
+        { id: "C3q6", text: "Espèce dominante", answers: [
+        { text: "Cannes", next: "C3.3" },
+        { text: "Autres", next: "C3q7" }
+      ]},
+        { id: "C3q7", text: "Forme de croissance", answers: [
+        { text: "Haute", next: "C3.2" },
+        { text: "Basse", next: "C3.4" }
+      ]},
+    ],
+    states: {
+      'C3.1': 'Formations à hélophytes riches en espèces',
+      'C3.2': "Roselières et formations de bordures à grands hélophytes autres que les roseaux",
+      'C3.3': "Formations riveraies à grandes Cannes",
+      'C3.4': "Végétations à croissance lente, pauvres en espèces, du bord des eaux ou amphibies",
+      'C3.5': 'Berges périodiquement inondées à végétation pionnière et éphémère',
+      'C3.6': "Berges nues ou à végétation clairsemées avec des sédiments meubles ou mobiles",
+      'C3.7': 'Berges nues ou à végétation clairsemée avec des sédiments non mobiles',
+      'C3.8': "Habitats continentaux dépendants de la bruine",
+    }
+  }, 
+    D1: { // Niveau D1
+    questions: [
+      { id: "D1q1", text: "Dépendante du relief", answers: [
+        { text: "Oui", next: "D1.1" },
+        { text: "Non", next: "D1.2" }
+      ]},
+    ],
+    states: {
+      'D1.1': 'Tourbières hautes',
+      'D1.2': "Tourbières de couverture",
+            }
+  },
+    D2: { // Niveau D2
+    questions: [
+      { id: "D2q1", text: "Nappe phréatique", answers: [
+        { text: "Sous le niveau du sol", next: "D2q2" },
+        { text: "Au niveau du sol", next: "D2q3" }
+      ]},
+        { id: "D2q2", text: "Origine de l'eau", answers: [
+        { text: "Cours d'eau", next: "D2.1" },
+        { text: "Sources et ruissellements localisés", next: "D2.2" }
+      ]},
+        { id: "D2q3", text: "écoulement", answers: [
+        { text: "Sol gorgé d'eau", next: "D2.3" },
+        { text: "Sources et ruissellements localisés", next: "D2.2"}
+      ]},
+    ],
+    states: {
+      'D2.1': 'Tourbières de vallée',
+      'D2.2': "Bas-marais oligotrophes et tiurbières des sources d'eau douce",
+      'D2.2': "Tourbières de transition et tourbières tremblantes",
+            }
+  },
+    D4: { // Niveau D4
+    questions: [
+      { id: "D4q1", text: "Flore arctico-montagnarde", answers: [
+        { text: "Oui", next: "D4.2" },
+        { text: "Non", next: "D4.1" }
+      ]},
+    ],
+    states: {
+      'D4.1': 'Bas-marais riches en bases, y compris les bas-marais eutrophes à hautes herbes, suintements et ruissellements calcaires',
+      'D4.2': "Communautés riveraines des sources et des ruisseaux de montagnes calcaires, avec une riche flore arctico-montagnarde",
+            }
+  },
+    D5: { // Niveau D5
+    questions: [
+      { id: "D5q1", text: "Végétation dominante", answers: [
+        { text: "Roseaux", next: "D5.1" },
+        { text: "Carex", next: "D5.2" },
+        { text: "Joncs", next: "D5.3" }
+      ]},
+    ],
+    states: {
+      'D5.1': 'Roselières normalement sans eau libre',
+      'D5.2': "Formations à grandes Cypéracées normalement sans eau libre",
+      'D5.3': "Zones marécageuses dominées par les Juncus effusus ou d'autres grands Juncus",
+            }
+  },
+    D6: { // Niveau D6
+    questions: [
+      { id: "D6q1", text: "Végétation haute", answers: [
+        { text: "Oui", next: "D6.2" },
+        { text: "Non", next: "D6.1" }
+      ]},
+    ],
+    states: {
+      'D6.1': 'Marais salés continentaux',
+      'D6.2': "Nappes d'hélophytes, salines ou saumâtres, pauvres en espèces, normalement sans eau libre",
+            }
+  },
+}, 
 }
