@@ -640,7 +640,7 @@ level3: { // Questions et réponses pour le niveau 3
       ]},
       { id: "C2q3", text: "Film d'eau sur la roche", answers: [
         { text: "Oui", next: "C2.6" },
-        { text: "Non", next: "C2q4 }
+        { text: "Non", next: "C2q4" }
       ]},
         { id: "C2q4", text: "Marée", answers: [
         { text: "Oui", next: "C2.4" },
@@ -680,7 +680,7 @@ level3: { // Questions et réponses pour le niveau 3
       ]},
         { id: "C3q5", text: "Diversité spécifique", answers: [
         { text: "Forte", next: "C3.1" },
-        { text: "Faible", next: "C3q6 }
+        { text: "Faible", next: "C3q6" }
       ]},
         { id: "C3q6", text: "Espèce dominante", answers: [
         { text: "Cannes", next: "C3.3" },
@@ -732,7 +732,7 @@ level3: { // Questions et réponses pour le niveau 3
     states: {
       'D2.1': 'Tourbières de vallée',
       'D2.2': "Bas-marais oligotrophes et tiurbières des sources d'eau douce",
-      'D2.2': "Tourbières de transition et tourbières tremblantes",
+      'D2.3': "Tourbières de transition et tourbières tremblantes",
             }
   },
     D4: { // Niveau D4
