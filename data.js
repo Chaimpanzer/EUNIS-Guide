@@ -773,5 +773,93 @@ level3: { // Questions et réponses pour le niveau 3
       'D6.2': "Nappes d'hélophytes, salines ou saumâtres, pauvres en espèces, normalement sans eau libre",
             }
   },
+      E1: { // Niveau E1
+    questions: [
+      { id: "E1q1", text: "Sols métallifères", answers: [
+        { text: "Oui", next: "E1.B" },
+        { text: "Non", next: "E1q2" }
+      ]},
+      { id: "E1q2", text: "Méditerranéen, aride et surpâturé", answers: [
+        { text: "Oui", next: "E1.C" },
+        { text: "Non", next: "E1q3" }
+      ]},
+      { id: "E1q3", text: "Type de sol", answers: [
+        { text: "Riche en base", next: "E1q4" },
+        { text: "Déficit en base", next: "E1q9" }
+      ]},
+      { id: "E1q4", text: "Sol embryonnaire et végétation ouverte", answers: [
+        { text: "Oui", next: "E1.1" },
+        { text: "Non", next: "E1q5" }
+      ]},
+      { id: "E1q5", text: "Régions géographiques", answers: [
+        { text: "Némorale et steppe", next: "E1.2" },
+        { text: "Méditerranéenne", next: "E1q6" }
+      ]},
+      { id: "E1q6", text: "Annuelles nitrophiles", answers: [
+        { text: "Oui", next: "E1.6" },
+        { text: "Non", next: "E1q7" }
+      ]},
+      { id: "E1q7", text: "Montagne", answers: [
+        { text: "Oui", next: "E1.5" },
+        { text: "Non", next: "E1q8" }
+      ]},
+      { id: "E1q8", text: "Hauteur de végétation", answers: [
+        { text: "Haute", next: "E1.4" },
+        { text: "Basse", next: "E1.3" }
+      ]},
+      { id: "E1q9", text: "Végétation ouverte", answers: [
+        { text: "Oui", next: "E1q10" },
+        { text: "Non", next: "E1q11" }
+      ]},
+      { id: "E1q10", text: "Région biogéographique", answers: [
+        { text: "Autres", next: "E1.9" },
+        { text: "Méditerranéenne", next: "E1.A" }
+      ]},
+      { id: "E1q11", text: "Région biogéographique", answers: [
+        { text: "Méditerranéenne", next: "E1.8" },
+        { text: "Autres", next: "E1.7" }
+      ]},
+    ],
+    states: {
+      'E1.A': 'Pelouses sèches, ouvertes, acides et neutres méditerranéennes',
+      'E1.B': 'Pelouses des sols métallifères',
+      'E1.C': "Habitats méditerranéens secs à végétation herbacée non-vernale inappétente",
+      'E1.1': 'Végétations ouvertes des substrats sableux et rocheux continentaux',
+      'E1.2': 'Pelouses calcaires vivaces et steppes riches en bases',
+      'E1.3': "Pelouses xériques méditerranéennes",
+      'E1.4': 'Steppes méditerranéennes à grandes graminées et Artemisia',
+      'E1.5': 'Pelouses méditerranéo-montagnardes',
+      'E1.6': 'Pelouses à annuelles subnitrophiles',
+      'E1.7': 'Pelouses sèches acides et neutres fermées non-méditerranéennes',
+      'E1.8': 'Pelouses fermées, sèches, acides et neutres méditerranéennes',
+      'E1.9': 'Pelouses ouvertes, sèches, acides et neutres non-méditerranéennes, y compris les formations dunaires continentales',
+     }
+  },
+  E2: { // Niveau E2
+  questions: [
+    { id: "E2q1", text: "Gestion intensive", answers: [
+      { text: "Oui", next: "E2.6" },
+      { text: "Non", next: "E2q2" }
+    ]},
+    { id: "E2q2", text: "Gestion dominante", answers: [
+      { text: "Sans intervention", next: "E2.7" },
+      { text: "Fauche principalement", next: "E2q3" },
+      { text: "Pâture et éventuellement fauche", next: "E2.1" }
+    ]},
+    { id: "E2q3", text: "Altitude", answers: [
+      { text: "Montagne", next: "E2.3" },
+      { text: "Basse à moyenne", next: "E2.2" }
+    ]}
+  ],
+  states: {
+    'E2.1': "Pâturages permanents mésotrophes et prairies de post-pâturage",
+    'E2.2': "Prairies de fauche de basse et moyenne altitude",
+    'E2.3': "Prairies de fauche montagnardes",
+    'E2.6': "Prairies améliorées, réensemencées et fortement fertilisées, y compris les terrains de sport et les pelouses ornementales",
+    'E2.7': "Prairies mésiques non gérées",
+  }
+}  
+
+
 }, 
 }
