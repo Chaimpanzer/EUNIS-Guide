@@ -862,4 +862,116 @@ level3: { // Questions et réponses pour le niveau 3
 
 
 }, 
-}
+  E3: { //niveau E3
+      questions: [
+    { id: "E3q1", text: "Climat", answers: [
+      { text: "Méditerranéen", next: "E3q2" },
+      { text: "Autre", next: "E3q3" }
+    ]},
+    { id: "E3q2", text: "Dessèchement estival", answers: [
+      { text: "Oui", next: "E3.2" },
+      { text: "Non", next: "E3.1" },
+    ]},
+    { id: "E3q3", text: "Oligotrophe", answers: [
+      { text: "Oui", next: "E3.5" },
+      { text: "Non", next: "E3.4" }
+    ]} //fin derniere question
+  ], //fin questions
+    states: {
+    'E3.1': "Prairies humides hautes méditerranéennes",
+    'E3.2': "Prairies méditerranéennes humides rases",
+    'E2.4': "Prairies eutrophes et mésotrophes humides ou mouilleuses",
+    'E2.5': "Prairies oligotrophes humides ou mouilleuses",
+  } //fin states du niveau en cours 
+  }, // fin niveau en cours
+  
+    E4: { //niveau E4
+      questions: [
+    { id: "E4q1", text: "Couche de neige tardive", answers: [
+      { text: "Oui", next: "E4.1" },
+      { text: "Non", next: "E4q2" }
+    ]},
+    { id: "E4q2", text: "Dominés par les mousses et lichens", answers: [
+      { text: "Oui", next: "E4.2" },
+      { text: "Non", next: "E4q3" },
+    ]},
+    
+    { id: "E4q3", text: "Enrichies", answers: [
+      { text: "Oui", next: "E4.5" },
+      { text: "Non", next: "E4q4" },
+    ]},
+    { id: "E4q4", text: "Type de sol", answers: [
+      { text: "Riche en bases", next: "E4.4" },
+      { text: "Acide", next: "E4.3" }
+    ]} //fin derniere question
+  ], //fin questions
+    states: {
+    'E4.1': "Combes à neige avec végétation",
+    'E4.2': "Sommets, corniches et pentes eposées des montagnes, dominés par des mousses et es lichens",
+    'E4.3': "Pelouses alpines et subalpines acidiphiles",
+    'E4.4': "Pelouses alpines et subalpines calcicoles",
+    'E4.5': "Prairies alpines et subalpines fertilisées",
+  } //fin states du niveau en cours 
+  }, // fin niveau en cours
+
+  
+E5: { //niveau E5
+      questions: [
+    { id: "E5q1", text: "Sols limoneux humides subalpins", answers: [
+      { text: "Oui", next: "E5.5" },
+      { text: "Non", next: "E5q2" }
+    ]},
+    { id: "E5q2", text: "Dominés par la fougère aigle", answers: [
+      { text: "Oui", next: "E5.3" },
+      { text: "Non", next: "E5q3" },
+    ]},
+    
+    { id: "E5q3", text: "Forte anthropisation", answers: [
+      { text: "Oui", next: "E5.1" },
+      { text: "Non", next: "E5q4" },
+    ]},
+    { id: "E5q4", text: "Régime thermique", answers: [
+      { text: "Thermophile", next: "E5.2" },
+      { text: "Mésophile", next: "E5.4" }
+    ]} //fin derniere question
+  ], //fin questions
+    states: {
+    'E5.1': "Végétations herbacées anthropiques",
+    'E5.2': "Ourlets forestiers thermophiles",
+    'E5.3': "Formations à Pteridium aquilinum",
+    'E5.4': "Lisières et prairies humides ou mouilleuses à grandes herbacées et à fougères",
+    'E5.5': "Formations subalpines humides ou mouilleuses à grandes herbacées et à fougères",
+  } //fin states du niveau en cours 
+  }, // fin niveau en cours
+
+E6: { //niveau E6
+      questions: [
+    { id: "E6q1", text: "Suivant", answers: [
+      { text: "Suivant", next: "E6.1" },
+    ]}, //fin derniere question
+  ], //fin questions
+    states: {
+    'E6.1': "Steppes salées intérieures méditerranéennes",
+  } //fin states du niveau en cours 
+    }, // fin niveau en cours
+  
+
+
+
+  
+  
+E7: { //niveau E7
+      questions: [
+    { id: "E7q1", text: "Climat", answers: [
+      { text: "Atlantique", next: "E7.1" },
+      { text: "Sub-Continental", next: "E7.2" },
+      { text: "Méditerranéen", next: "E7.3" }
+    ]}, //fin derniere question
+  ], //fin questions
+    states: {
+    'E7.1': "Parcs boisés atlantiques",
+    'E7.2': "Parcs boisés subcontinentaux",
+    'E7.3': "Dehesa",
+  } //fin states du niveau en cours 
+  }, // fin niveau en cours
+}  // fin const data
